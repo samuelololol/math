@@ -13,14 +13,15 @@ class node_t {
     friend ostream& operator<<(std::ostream& out, const node_t& n);
     public:
         node_t ();
-        node_t (int ix, int iy);
-        node_t (rational<int> ix, rational<int> iy);
+        node_t (const int ix, const int iy);
+        node_t (const rational<int> ix, const rational<int> iy);
         //node_t (const node_t& n);
         node_t& operator=(const node_t& n);
         ~node_t();
 
         bool operator<(const node_t& n) const;
         bool operator==(const node_t& n) const;
+        bool operator!=(const node_t& n) const;
         // distance
         //rational<int> operator-(const node_t& n) const;
 

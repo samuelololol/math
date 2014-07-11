@@ -5,10 +5,10 @@ node_t::node_t ():
     y_(0),
     isnull_(true) {}
 
-node_t::node_t (int ix, int iy):
+node_t::node_t (const int ix, const int iy):
     x_(ix),y_(iy),isnull_(false) {}
 
-node_t::node_t (rational<int> ix, rational<int> iy):
+node_t::node_t (const rational<int> ix, const rational<int> iy):
     x_(ix),y_(iy),isnull_(false) {}
 
 node_t& node_t::operator=(const node_t& n)
@@ -43,12 +43,19 @@ bool node_t::operator<(const node_t& n) const
 
 bool node_t::operator==(const node_t& n) const
 {
-    if ((x_ == n.getx()) && (y_ == n.gety()) && (isnull() == n.isnull()))
+    if ((isnull() == n.isnull()) && (x_ == n.getx()) && (y_ == n.gety()))
         return true;
     else
         return false;
 }
 
+bool node_t::operator!=(const node_t& n) const
+{
+    if (*this == n)
+        return false;
+    else
+        return true;
+}
 // distance
 //rational<int> node_t::operator-(const node_t& n) const
 //{ return sqrt((n.getx() - x_)*(n.getx() - x_) + (n.gety() - y_)*(n.gety() - y_)); }
