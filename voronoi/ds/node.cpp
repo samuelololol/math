@@ -51,7 +51,7 @@ bool node_t::operator==(const node_t& n) const
 
 bool node_t::operator!=(const node_t& n) const
 {
-    return !(*this == n)
+    return !(*this == n);
 }
 // distance
 //rational<int> node_t::operator-(const node_t& n) const

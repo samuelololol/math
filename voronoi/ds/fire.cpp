@@ -59,6 +59,10 @@ bool fire_t::operator==(const fire_t& ifire) const
         return false;
 }
 
+bool fire_t::operator!=(const fire_t& ifire) const
+{
+    return !(*this == ifire);
+}
 
 fire_t::~fire_t(){}  
 

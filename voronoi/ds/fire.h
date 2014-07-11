@@ -20,6 +20,7 @@ public:
     fire_t& operator=(const fire_t& ifire);
 
     bool operator==(const fire_t& ifire) const;
+    bool operator!=(const fire_t& ifire) const;
 
 
     virtual ~fire_t ();
