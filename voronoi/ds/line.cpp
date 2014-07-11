@@ -140,6 +140,10 @@ bool line_t::operator==(const line_t& rhs) const
         return false;
 }
 
+bool line_t::operator!=(const line_t& rhs) const
+{
+    return !(*this == rhs);
+}
 const node_t line_t::operator*(const line_t& rhs) const
 {
     // mx - ay + b = 0

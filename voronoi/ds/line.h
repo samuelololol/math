@@ -27,6 +27,7 @@ class line_t {
         line_t& operator=(const line_t& rhs);
         const node_t operator*(const line_t& rhs) const;
         bool operator==(const line_t& rhs) const;
+        bool operator!=(const line_t& rhs) const;
 
         const line_t normalline(const node_t& xnode) const;
 
